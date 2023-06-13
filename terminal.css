@@ -1,0 +1,15 @@
+html { 
+    color:#DFDFDF;
+    background-color:#080808;
+    font-family:"Courier New", "Courier", monospace;
+    overflow-x:clip;
+    overflow-y:scroll;
+    font-size:11pt;
+    line-height:1.0;
+}
+body { margin:0; }
+header {
+    color:#FFFFFF;
+    font-weight:bold;
+    display:inline;
+}
