@@ -124,7 +124,6 @@ system.execute = function(command) {
     for (var i=0;i<commandList.length;i++) {
         var op = commandList[i];
         var args = op.split(" ");
-        console.log(args);
         var j;
         for (j=0;j<args.length;j++) { if (args[j] != "") { break; } }
         args = args.splice(j);
