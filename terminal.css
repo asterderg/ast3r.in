@@ -6,10 +6,39 @@ html {
     overflow-y:scroll;
     font-size:11pt;
     line-height:1.0;
+    cursor:default;
 }
 body { margin:0; }
-header {
-    color:#FFFFFF;
-    font-weight:bold;
-    display:inline;
+body * { white-space:pre; }
+
+input { all:inherit; display:inline-block; border:none; background-color:transparent; caret-color: transparent; user-select:text; height:14px; }
+input:focus { outline:none; }
+
+terminal-line { display:block; user-select:text; height:16px; }
+terminal-line::selection, terminal-caret::selection, input::selection { color:#080808; background-color:#DFDFDF; }
+terminal-style-default { color:#DFDFDF; background-color:#080808; }
+terminal-style-default::selection { color:#080808; background-color:#DFDFDF; }
+terminal-style-error { color:#E04040; background-color:#080808; }
+terminal-style-error::selection { color:#080808; background-color:#E04040; }
+terminal-style-header { color:#FFFFFF; background-color:#080808; font-weight:bold; }
+terminal-style-header::selection { color:#080808; background-color:#FFFFFF; }
+terminal-style-rainbow { animation:rainbow 4s linear 0s infinite; background-color:#080808; }
+terminal-style-rainbow::selection { color:#080808; background-color:#DFDFDF; }
+
+terminal-style-default, terminal-style-error, terminal-style-header, terminal-style-rainbow { display:inline; }
+
+@keyframes rainbow {
+  00.00% {color:hsl(000,90%,65%);}
+  08.33% {color:hsl(030,90%,65%);}
+  16.67% {color:hsl(060,90%,65%);}
+  25.00% {color:hsl(090,90%,65%);}
+  33.33% {color:hsl(120,90%,65%);}
+  41.66% {color:hsl(150,90%,65%);}
+  50.00% {color:hsl(180,90%,65%);}
+  58.33% {color:hsl(210,90%,65%);}
+  66.67% {color:hsl(240,90%,65%);}
+  75.00% {color:hsl(270,90%,65%);}
+  83.33% {color:hsl(300,90%,65%);}
+  91.66% {color:hsl(330,90%,65%);}
+  100.0% {color:hsl(360,90%,65%);}
 }
