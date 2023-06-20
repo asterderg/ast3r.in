@@ -151,6 +151,7 @@ system.printLine = function(text) {
         terminalLine.appendChild(styleTagElement);
     }
     document.body.appendChild(terminalLine);
+    system.scrollToEnd();
 }
 
 // [ clearInputLine ] Clears the input line.
@@ -186,6 +187,12 @@ system.printInputLine = function() {
     terminalLine.appendChild(elements.caret);
     document.body.appendChild(terminalLine);
     system.resetCaret();
+    system.scrollToEnd();
+}
+
+// [ scrollToEnd ] Scrolls to the end of the page
+system.scrollToEnd = function() {
+    window.scrollTo(0, document.body.scrollHeight);
 }
 
 /* System initialization */
