@@ -190,7 +190,7 @@ system.printInputLine = function() {
     system.scrollToEnd();
 }
 
-// [ scrollToEnd ] Scrolls to the end of the page
+// [ scrollToEnd ] Scrolls to the end of the page.
 system.scrollToEnd = function() {
     window.scrollTo(0, document.body.scrollHeight);
 }
