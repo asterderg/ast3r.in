@@ -120,12 +120,20 @@ system.resetCaret = function() {
 
 // [ execute ] Executes a command.
 system.execute = function(command) {
-    var args = command.split(" ");
-    var commandName = args[0];
-    if (commands[commandName]) {
-        commands[commandName](args);
-    } else {
-        system.throwError("\'"+commandName+"\' is not a known command.");
+    var commandList = command.split("&");
+    for (var i=0;i<commandList.length;i++) {
+        var op = commandList[i];
+        var args = op.split(" ");
+        console.log(args);
+        var j;
+        for (j=0;j<args.length;j++) { if (args[j] != "") { break; } }
+        args = args.splice(j);
+        var commandName = args[0];
+        if (commands[commandName]) {
+            commands[commandName](args);
+        } else {
+            system.throwError("\'"+commandName+"\' is not a known command.");
+        }
     }
 }
 
