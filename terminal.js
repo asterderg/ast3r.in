@@ -50,7 +50,7 @@ eventhandlers.blinkcaret = function() {
 // [ window.keydown focusinput ] Called on key press, forces the input focus to the input element.
 eventhandlers.focusinput = function(event) {
     console.log(event);
-    if (event.key!="OS" && !event.shiftKey && !event.ctrlKey && !event.altKey) { elements.input.focus(); }
+    if (!["OS","Shift"].includes(event.key) && !event.ctrlKey && !event.altKey) { elements.input.focus(); }
 }
 
 // [ input.input resizeinput ] Called on value input, resizes the input element to the real size in pixels of the content.
